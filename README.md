@@ -62,6 +62,24 @@ Memory-based collaborative filtering: where does the signal come from, and how d
 
 ---
 
+## Additional Reference Notebook
+
+### [Recommender Systems in Python 101](Recommender_Systems_in_Python_101.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TalCordova/RS_Coller_TAU_26B/blob/master/Recommender_Systems_in_Python_101.ipynb)
+
+> **Note:** This notebook is not covered in the TA sessions and was not written for this course. It is a copy of the public Kaggle kernel **["Recommender Systems in Python 101"](https://www.kaggle.com/gspmoreira/recommender-systems-in-python-101)** by **[Gabriel Moreira](https://www.kaggle.com/gspmoreira)** (@gspmoreira), included here as a reference.
+
+A broader end-to-end walkthrough of the main recommender system families, using the [CI&T Deskdrop dataset](https://www.kaggle.com/gspmoreira/articles-sharing-reading-from-cit-deskdrop) (~73k user interactions on ~3k internal company articles) — created and published by the same author.
+
+**What it covers:**
+- **Popularity model** — a strong non-personalized baseline
+- **Content-Based Filtering** — TF-IDF article profiles + weighted user profiles, scored via cosine similarity
+- **Collaborative Filtering** — SVD matrix factorization (scipy `svds`)
+- **Hybrid model** — weighted ensemble of CB and CF scores
+- Evaluation using **Recall@5** and **Recall@10** (1 positive + 100 sampled negatives per user)
+
+---
+
 ## Dataset
 
 All notebooks use the **MovieLens Small** dataset, downloaded automatically from GroupLens:
@@ -93,7 +111,8 @@ numpy  pandas  scikit-learn  matplotlib  seaborn  implicit
 ## Structure
 
 ```
-notebook1_data_handling.ipynb       # EDA, filtering, train/test split
-notebook2_ranking_evaluation.ipynb  # Ranking metrics, MF vs BPR
+notebook1_data_handling.ipynb            # EDA, filtering, train/test split
+notebook2_ranking_evaluation.ipynb       # Ranking metrics, MF vs BPR
 notebook3_collaborative_filtering.ipynb  # Item-item & user-user CF
+Recommender_Systems_in_Python_101.ipynb  # Reference: CB, CF, Hybrid (not covered in sessions)
 ```
