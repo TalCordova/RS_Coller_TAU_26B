@@ -1,7 +1,7 @@
 # Recommender Systems — TA Session Notebooks
 ### Tel-Aviv University · Coller School of Management · Semester B 2026
 
-This repository contains three Google Colab notebooks used in the TA sessions of the Recommender Systems course. The notebooks build on each other sequentially — each one picks up where the previous left off.
+This repository contains Google Colab notebooks used in the TA sessions of the Recommender Systems course. The notebooks build on each other sequentially — each one picks up where the previous left off.
 
 The slides for this session can be found [here](https://docs.google.com/presentation/d/1jjdi-QIrcRPyKd0FAdInjVFw3YSNbQXXgjGV6qGDi60/edit?slide=id.p1#slide=id.p1).
 
@@ -62,6 +62,21 @@ Memory-based collaborative filtering: where does the signal come from, and how d
 
 ---
 
+### [Notebook 4 — Content-Based Filtering](notebook4_content_based.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TalCordova/RS_Coller_TAU_26B/blob/master/notebook4_content_based.ipynb)
+
+Same retrieval machinery as item-item CF — *"Because you watched X..."* — but the similarity signal now comes from **item features** instead of the utility matrix.
+
+**Topics covered:**
+- Loading movie metadata (genres) from *The Movies Dataset* (TMDB, ~45k movies)
+- Minimal preprocessing: parsing genre strings → multi-hot encoding
+- Building a genre-based similarity index with `NearestNeighbors` (cosine)
+- *"Because you watched X..."* recommendations driven purely by content, with no interaction data
+- 🏋️ **Exercise**: critically examine similarity-1.0 ties and discuss richer item features (overview text, cast/crew, embeddings)
+- Where content-based fits relative to CF: solves **item** cold start, but not **user** cold start
+
+---
+
 ## Additional Reference Notebook
 
 ### [Recommender Systems in Python 101](Recommender_Systems_in_Python_101.ipynb)
@@ -77,23 +92,6 @@ A broader end-to-end walkthrough of the main recommender system families, using 
 - **Collaborative Filtering** — SVD matrix factorization (scipy `svds`)
 - **Hybrid model** — weighted ensemble of CB and CF scores
 - Evaluation using **Recall@5** and **Recall@10** (1 positive + 100 sampled negatives per user)
-
----
-
-## Dataset
-
-All notebooks use the **MovieLens Small** dataset, downloaded automatically from GroupLens:
-
-```
-https://files.grouplens.org/datasets/movielens/ml-latest-small.zip
-```
-
-| Stat | Value |
-|------|-------|
-| Ratings | 100,836 |
-| Users | 610 |
-| Movies | 9,742 |
-| Sparsity | ~98.3% |
 
 ---
 
@@ -114,5 +112,6 @@ numpy  pandas  scikit-learn  matplotlib  seaborn  implicit
 notebook1_data_handling.ipynb            # EDA, filtering, train/test split
 notebook2_ranking_evaluation.ipynb       # Ranking metrics, MF vs BPR
 notebook3_collaborative_filtering.ipynb  # Item-item & user-user CF
+notebook4_content_based.ipynb            # Content-based filtering via genres
 Recommender_Systems_in_Python_101.ipynb  # Reference: CB, CF, Hybrid (not covered in sessions)
 ```
