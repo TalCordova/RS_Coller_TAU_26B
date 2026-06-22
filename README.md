@@ -62,6 +62,7 @@ Production systems show users a ranked list, not a predicted score. This noteboo
 
 ### [Notebook 3 — Collaborative Filtering](notebook3_collaborative_filtering.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TalCordova/RS_Coller_TAU_26B/blob/master/notebook3_collaborative_filtering.ipynb)
+
 [![Solutions](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TalCordova/RS_Coller_TAU_26B/blob/master/notebook3_collaborative_filtering_solutions.ipynb) ← fully-solved version
 
 Memory-based collaborative filtering: where does the signal come from, and how do we use it?
@@ -82,6 +83,8 @@ Memory-based collaborative filtering: where does the signal come from, and how d
 ### [Notebook 4 — Content-Based Filtering](notebook4_content_based.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TalCordova/RS_Coller_TAU_26B/blob/master/notebook4_content_based.ipynb)
 
+[![Solutions](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TalCordova/RS_Coller_TAU_26B/blob/master/notebook4_content_based_solutions.ipynb) ← fully-solved version
+
 Same retrieval machinery as item-item CF — *"Because you watched X..."* — but the similarity signal now comes from **item features** instead of the utility matrix.
 
 **Topics covered:**
@@ -89,7 +92,7 @@ Same retrieval machinery as item-item CF — *"Because you watched X..."* — bu
 - Minimal preprocessing: parsing genre strings → multi-hot encoding
 - Building a genre-based similarity index with `NearestNeighbors` (cosine)
 - *"Because you watched X..."* recommendations driven purely by content, with no interaction data
-- 🏋️ **Exercise**: critically examine similarity-1.0 ties and discuss richer item features (overview text, cast/crew, embeddings)
+- 🏋️ **Exercise**: break the similarity-1.0 ties by enriching the item vector with numeric features (release year, vote average, vote count) — scale to [0,1], re-rank, and watch the recommendations sharpen (Toy Story → Pixar-era hits; GoldenEye → Bond/action blockbusters)
 - Where content-based fits relative to CF: solves **item** cold start, but not **user** cold start
 
 ---
@@ -132,5 +135,6 @@ notebook2_ranking_evaluation.ipynb       # Ranking metrics, MF vs BPR
 notebook3_collaborative_filtering.ipynb  # Item-item & user-user CF (interactive)
 notebook3_collaborative_filtering_solutions.ipynb  # ↳ fully-solved companion
 notebook4_content_based.ipynb            # Content-based filtering via genres
+notebook4_content_based_solutions.ipynb  # ↳ fully-solved companion
 Recommender_Systems_in_Python_101.ipynb  # Reference: CB, CF, Hybrid (not covered in sessions)
 ```
