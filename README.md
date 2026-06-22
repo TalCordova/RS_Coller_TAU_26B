@@ -92,7 +92,7 @@ Same retrieval machinery as item-item CF — *"Because you watched X..."* — bu
 - Minimal preprocessing: parsing genre strings → multi-hot encoding
 - Building a genre-based similarity index with `NearestNeighbors` (cosine)
 - *"Because you watched X..."* recommendations driven purely by content, with no interaction data
-- 🏋️ **Exercise**: critically examine similarity-1.0 ties and discuss richer item features to break them (release year, vote count, vote average)
+- 🏋️ **Exercise**: break the similarity-1.0 ties by enriching the item vector with numeric features (release year, vote average, vote count) — scale to [0,1], re-rank, and watch the recommendations sharpen (Toy Story → Pixar-era hits; GoldenEye → Bond/action blockbusters)
 - Where content-based fits relative to CF: solves **item** cold start, but not **user** cold start
 
 ---
