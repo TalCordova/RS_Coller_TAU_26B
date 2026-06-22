@@ -7,10 +7,25 @@ The slides for this session can be found [here](https://docs.google.com/presenta
 
 ---
 
+## Interactive format
+
+Notebooks 1 and 3 are designed to be worked through, not just read. As you go you'll hit short prompts:
+
+- 🔮 **Predict** — guess the answer *before* running the next cell
+- 🔧 **Tweak** — change a value, re-run, see what moves
+- 🔍 **Interpret** — read an output and answer the question
+- 🏋️ **Your turn** — write the code yourself
+
+Each 🏋️ cell is followed by a collapsed **🔑 Solution** cell (in Colab it shows only a title bar — double-click to reveal). Text answers hide behind a *"🔑 Reveal answer"* toggle. A fully-solved companion notebook (`*_solutions.ipynb`) is also provided for reference after the session.
+
+---
+
 ## Notebooks
 
 ### [Notebook 1 — Data Preparation](notebook1_data_handling.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TalCordova/RS_Coller_TAU_26B/blob/master/notebook1_data_handling.ipynb)
+
+[![Solutions](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TalCordova/RS_Coller_TAU_26B/blob/master/notebook1_data_handling_solutions.ipynb) ← fully-solved version
 
 Before building any recommender, you need to understand your data and make a series of decisions that will affect everything downstream.
 
@@ -23,6 +38,7 @@ Before building any recommender, you need to understand your data and make a ser
   - Random split
   - Global temporal split
   - **User temporal split** (used in subsequent notebooks)
+- 🔮🔧🔍 prediction/tweak/interpret prompts throughout, plus a 🏋️ **exercise**: implement `user_temporal_split`
 
 ---
 
@@ -46,6 +62,7 @@ Production systems show users a ranked list, not a predicted score. This noteboo
 
 ### [Notebook 3 — Collaborative Filtering](notebook3_collaborative_filtering.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TalCordova/RS_Coller_TAU_26B/blob/master/notebook3_collaborative_filtering.ipynb)
+[![Solutions](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TalCordova/RS_Coller_TAU_26B/blob/master/notebook3_collaborative_filtering_solutions.ipynb) ← fully-solved version
 
 Memory-based collaborative filtering: where does the signal come from, and how do we use it?
 
@@ -109,9 +126,11 @@ numpy  pandas  scikit-learn  matplotlib  seaborn  implicit
 ## Structure
 
 ```
-notebook1_data_handling.ipynb            # EDA, filtering, train/test split
+notebook1_data_handling.ipynb            # EDA, filtering, train/test split (interactive)
+notebook1_data_handling_solutions.ipynb  # ↳ fully-solved companion
 notebook2_ranking_evaluation.ipynb       # Ranking metrics, MF vs BPR
-notebook3_collaborative_filtering.ipynb  # Item-item & user-user CF
+notebook3_collaborative_filtering.ipynb  # Item-item & user-user CF (interactive)
+notebook3_collaborative_filtering_solutions.ipynb  # ↳ fully-solved companion
 notebook4_content_based.ipynb            # Content-based filtering via genres
 Recommender_Systems_in_Python_101.ipynb  # Reference: CB, CF, Hybrid (not covered in sessions)
 ```
